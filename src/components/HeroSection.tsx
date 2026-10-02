@@ -32,9 +32,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-tulas-crimson/10 dark:bg-tulas-crimson/20 border border-tulas-crimson/25 text-tulas-crimson dark:text-tulas-gold-light text-xs font-bold tracking-wide uppercase mb-6"
             >
               <Sparkles className="w-3.5 h-3.5 text-tulas-gold animate-spin" style={{ animationDuration: '8s' }} />
-              <span>The Modern Gurukul • Dehradun, India</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-tulas-crimson" />
-              <span className="text-slate-700 dark:text-slate-300 font-semibold normal-case">CBSE Co-Ed Boarding (Class IV-XII)</span>
+              <span>The Modern Gurukul • Dehradun</span>
+              <span className="hidden sm:inline w-1.5 h-1.5 rounded-full bg-tulas-crimson" />
+              <span className="hidden sm:inline text-slate-700 dark:text-slate-300 font-semibold normal-case">CBSE Co-Ed Boarding</span>
             </motion.div>
 
             {/* Main Headline with Original Copy and Animated Underline Doodle */}
@@ -42,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6"
+              className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-6"
             >
               LET’S DO <span className="text-tulas-crimson italic font-serif">it</span> WITH{' '}
               <span className="relative whitespace-nowrap inline-block text-tulas-crimson dark:text-tulas-gold">
@@ -138,7 +138,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               data-cursor-text="CAMPUS"
             >
               <img
-                src="https://tis.edu.in/_next/static/media/campus.e67b1a0a.png"
+                src="/tis-assets/campus.e67b1a0a.png"
                 alt="Tula's International School Dehradun Campus"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -163,12 +163,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               initial={{ opacity: 0, x: -30, y: -20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute -top-6 -left-6 sm:-left-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3.5 z-20 animate-float-slow"
+              className="absolute -top-4 left-2 sm:-top-6 sm:-left-6 md:-left-8 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-20 animate-float-slow"
               data-cursor-text="SPORTS"
             >
-              <div className="w-12 h-12 rounded-xl overflow-hidden bg-tulas-crimson/10 flex-shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-crimson/10 flex-shrink-0">
                 <img
-                  src="https://tis.edu.in/_next/static/media/archery.7a805345.png"
+                  src="/tis-assets/archery.7a805345.png"
                   alt="Archery at TIS"
                   className="w-full h-full object-cover"
                 />
@@ -191,11 +191,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               initial={{ opacity: 0, x: 30, y: 20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute -bottom-8 -right-4 sm:-right-8 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3.5 z-20"
+              className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-4 md:-right-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-20"
               style={{ animation: 'float 7s ease-in-out infinite reverse' }}
               data-cursor-text="CARE"
             >
-              <div className="w-12 h-12 rounded-xl bg-tulas-teal-light/30 dark:bg-tulas-teal/20 flex items-center justify-center text-tulas-teal-dark dark:text-tulas-teal flex-shrink-0 font-bold text-lg font-display">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-tulas-teal-light/30 dark:bg-tulas-teal/20 flex items-center justify-center text-tulas-teal-dark dark:text-tulas-teal flex-shrink-0 font-bold text-base sm:text-lg font-display">
                 6:1
               </div>
               <div className="pr-2">
@@ -216,7 +216,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="hidden sm:flex absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-slate-200/80 dark:border-slate-800 items-center gap-2.5 z-20"
+              className="hidden lg:flex absolute top-1/2 -right-4 xl:-right-8 transform -translate-y-1/2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-slate-200/80 dark:border-slate-800 items-center gap-2.5 z-20"
             >
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
               <span className="text-xs font-bold text-slate-800 dark:text-slate-200">

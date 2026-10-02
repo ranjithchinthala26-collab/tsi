@@ -60,7 +60,7 @@ export const StatsRibbon: React.FC = () => {
         transition={{ duration: 0.7 }}
         className="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-slate-200/80 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90"
       >
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-slate-800">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {KEY_STATS.map((stat, idx) => (
             <motion.div
               key={stat.id}
@@ -68,9 +68,11 @@ export const StatsRibbon: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className={`flex flex-col items-center text-center px-3 ${idx > 0 ? 'pt-4 sm:pt-0' : ''}`}
+              className={`flex flex-col items-center text-center p-3.5 sm:p-4 rounded-2xl bg-slate-50/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-800/60 hover:border-tulas-gold/40 transition-all ${
+                idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+              }`}
             >
-              <div className="p-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 mb-3 shadow-inner">
+              <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-800 shadow-sm mb-2.5 sm:mb-3">
                 {statIcons[idx]}
               </div>
 

@@ -51,3 +51,14 @@ export interface FAQItem {
   answer: string;
   category: string;
 }
+
+export interface LifeActivityItem {
+  id: string;
+  category: 'Sports' | 'Clubs & STEM' | 'Arts & Culture' | 'Leadership';
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  highlight: string;
+  tags: string[];
+}

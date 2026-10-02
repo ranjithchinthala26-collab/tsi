@@ -18,7 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
       setIsScrolled(window.scrollY > 40);
 
       // Section tracker for active nav state
-      const sections = ['about', 'academics', 'sports', 'campus', 'boarding', 'mentors', 'reviews', 'faqs'];
+      const sections = ['about', 'academics', 'life-at-tis', 'sports', 'campus', 'boarding', 'mentors', 'reviews', 'faqs'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -41,11 +41,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
   const navLinks = [
     { label: 'About TIS', href: '#about', id: 'about' },
     { label: 'Academics', href: '#academics', id: 'academics' },
+    { label: 'Life at TIS', href: '#life-at-tis', id: 'life-at-tis' },
     { label: '16+ Sports', href: '#sports', id: 'sports' },
     { label: '360° Campus', href: '#campus', id: 'campus' },
-    { label: 'Boarding Life', href: '#boarding', id: 'boarding' },
+    { label: 'Boarding', href: '#boarding', id: 'boarding' },
     { label: 'Mentors', href: '#mentors', id: 'mentors' },
-    { label: 'Testimonials', href: '#reviews', id: 'reviews' },
+    { label: 'Reviews', href: '#reviews', id: 'reviews' },
     { label: 'FAQs', href: '#faqs', id: 'faqs' },
   ];
 
@@ -106,16 +107,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
             className="flex items-center gap-3 group"
             data-cursor-text="HOME"
           >
-            <div className="relative">
+            <div className="relative flex items-center justify-center p-1 rounded-xl bg-white/90 dark:bg-slate-900/90 shadow-sm border border-slate-200/60 dark:border-slate-800">
               <img
                 src={SCHOOL_INFO.logo}
                 alt="Tula's International School Crest"
-                className="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                onError={(e) => {
-                  // Fallback if image fails
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
+                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div className="flex flex-col">

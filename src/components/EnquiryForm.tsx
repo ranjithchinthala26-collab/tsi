@@ -138,7 +138,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             placeholder="Enter Student or Parent Name"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
+            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
           />
         </div>
 
@@ -151,7 +151,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             placeholder="Enter parent's email address"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
+            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
           />
         </div>
       </div>
@@ -165,7 +165,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
           <select
             value={formData.countryCode}
             onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-            className="w-20 px-2 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs font-semibold focus:outline-none"
+            className="w-20 px-2 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-xs font-semibold focus:outline-none"
           >
             <option value="+91">+91 (IN)</option>
             <option value="+971">+971 (UAE)</option>
@@ -182,7 +182,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             placeholder="10-digit mobile number"
             value={formData.mobile}
             onChange={(e) => setFormData({ ...formData, mobile: e.target.value.replace(/\D/g, '') })}
-            className="flex-1 px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
+            className="flex-1 px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
           />
 
           {!otpVerified && (
@@ -206,7 +206,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             placeholder="Enter OTP (e.g. 1234)"
             value={formData.otp}
             onChange={(e) => setFormData({ ...formData, otp: e.target.value })}
-            className="w-32 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs font-mono font-bold text-center focus:outline-none"
+            className="w-32 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-xs font-mono font-bold text-center focus:outline-none"
           />
           <button
             type="button"
@@ -238,7 +238,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             required
             value={formData.selectedClass}
             onChange={(e) => setFormData({ ...formData, selectedClass: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
+            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
           >
             <option value="">Select Grade</option>
             <option value="Class IV">Class IV (Junior)</option>
@@ -263,7 +263,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
             required
             value={formData.state}
             onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
+            className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-tulas-crimson transition-all"
           >
             <option value="">Select State</option>
             {INDIAN_STATES.map((s) => (

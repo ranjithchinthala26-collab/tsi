@@ -3,15 +3,14 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export const CustomCursor: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [cursorText, setCursorText] = useState('');
-  const [cursorVariant, setCursorVariant] = useState<'default' | 'hover' | 'text' | 'button'>('default');
+  const [isHovering, setIsHovering] = useState(false);
   const [isFinePointer, setIsFinePointer] = useState(false);
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Smooth springs for trailing circle
-  const springConfig = { damping: 24, stiffness: 220, mass: 0.6 };
+  // Silky smooth spring physics (low mass, high stiffness, optimal damping for zero lag)
+  const springConfig = { damping: 30, stiffness: 380, mass: 0.25 };
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
@@ -33,23 +32,11 @@ export const CustomCursor: React.FC = () => {
       mouseY.set(e.clientY);
       if (!isVisible) setIsVisible(true);
 
-      // Check what element is under the cursor
       const target = e.target as HTMLElement | null;
       if (!target) return;
 
-      const cursorAttr = target.closest('[data-cursor-text]')?.getAttribute('data-cursor-text');
-      const isClickable = target.closest('a, button, [role="button"], input, select, textarea');
-
-      if (cursorAttr) {
-        setCursorVariant('text');
-        setCursorText(cursorAttr);
-      } else if (isClickable) {
-        setCursorVariant('hover');
-        setCursorText('');
-      } else {
-        setCursorVariant('default');
-        setCursorText('');
-      }
+      const isClickable = target.closest('a, button, [role="button"], input, select, textarea, .clickable-hover');
+      setIsHovering(Boolean(isClickable));
     };
 
     const handleMouseLeave = () => setIsVisible(false);
@@ -71,9 +58,9 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[99999] overflow-hidden">
-      {/* Outer Spring Follower Ring */}
+      {/* Outer Spring Follower Ring - Minimalist & Elegant */}
       <motion.div
-        className="fixed top-0 left-0 flex items-center justify-center rounded-full pointer-events-none"
+        className="fixed top-0 left-0 rounded-full pointer-events-none will-change-transform"
         style={{
           x: smoothX,
           y: smoothY,
@@ -81,44 +68,33 @@ export const CustomCursor: React.FC = () => {
           translateY: '-50%',
         }}
         animate={{
-          width: cursorVariant === 'text' ? 84 : cursorVariant === 'hover' ? 52 : 36,
-          height: cursorVariant === 'text' ? 84 : cursorVariant === 'hover' ? 52 : 36,
-          backgroundColor: cursorVariant === 'text' ? 'rgba(185, 1, 36, 0.9)' : 'transparent',
-          borderColor: cursorVariant === 'text' ? '#c09d59' : cursorVariant === 'hover' ? '#b90124' : '#c09d59',
-          borderWidth: cursorVariant === 'text' ? '2px' : '2px',
+          width: isHovering ? 44 : 26,
+          height: isHovering ? 44 : 26,
+          borderColor: isHovering ? 'rgba(185, 1, 36, 0.75)' : 'rgba(192, 157, 89, 0.6)',
+          backgroundColor: isHovering ? 'rgba(185, 1, 36, 0.08)' : 'transparent',
+          borderWidth: isHovering ? '1.5px' : '1px',
+          scale: isHovering ? 1.05 : 1,
         }}
-        transition={{ type: 'spring', damping: 20, stiffness: 300, mass: 0.5 }}
-      >
-        {cursorVariant === 'text' && (
-          <motion.span
-            initial={{ opacity: 0, scale: 0.6 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.6 }}
-            className="text-[10px] font-bold uppercase tracking-wider text-white select-none px-2 text-center leading-tight"
-          >
-            {cursorText}
-          </motion.span>
-        )}
-      </motion.div>
+        transition={{ type: 'spring', damping: 28, stiffness: 400, mass: 0.3 }}
+      />
 
       {/* Center Precise Dot */}
-      {cursorVariant !== 'text' && (
-        <motion.div
-          className="fixed top-0 left-0 rounded-full pointer-events-none"
-          style={{
-            x: mouseX,
-            y: mouseY,
-            translateX: '-50%',
-            translateY: '-50%',
-          }}
-          animate={{
-            width: cursorVariant === 'hover' ? 8 : 6,
-            height: cursorVariant === 'hover' ? 8 : 6,
-            backgroundColor: cursorVariant === 'hover' ? '#b90124' : '#c09d59',
-          }}
-          transition={{ duration: 0.15 }}
-        />
-      )}
+      <motion.div
+        className="fixed top-0 left-0 rounded-full pointer-events-none will-change-transform shadow-sm"
+        style={{
+          x: mouseX,
+          y: mouseY,
+          translateX: '-50%',
+          translateY: '-50%',
+        }}
+        animate={{
+          width: isHovering ? 5 : 5,
+          height: isHovering ? 5 : 5,
+          backgroundColor: isHovering ? '#b90124' : '#c09d59',
+          opacity: isHovering ? 0.9 : 0.8,
+        }}
+        transition={{ duration: 0.15 }}
+      />
     </div>
   );
 };
