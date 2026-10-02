@@ -86,6 +86,13 @@
 ```
 tulas-international-school/
 ├── public/
+│   ├── images/
+│   │   ├── tis-logo.png               # Official approved TIS crest & logotype
+│   │   ├── campus.jpg                 # Authentic green campus, turf pitch & buildings
+│   │   ├── students.jpg               # TIS students in sports team jerseys
+│   │   ├── sports.jpg                 # 50m outdoor archery arena
+│   │   └── academics.jpg              # Optics & robotics science laboratory
+│   └── tis-assets/                    # High-res facility & lifestyle photography
 ├── src/
 │   ├── components/
 │   │   ├── AwardsAccreditations.tsx   # #1 Rankings & Global University tie-ups
@@ -99,7 +106,8 @@ tulas-international-school/
 │   │   ├── FAQSection.tsx             # Expandable accordion for parent queries
 │   │   ├── Footer.tsx                 # Comprehensive footer & compliance links
 │   │   ├── HeroSection.tsx            # High-impact hero with doodle & orbit cards
-│   │   ├── Navbar.tsx                 # Sticky blur nav, helpline & mobile drawer
+│   │   ├── LifeAtTIS.tsx              # Life Beyond Classroom: 4 pillars + sports marquee
+│   │   ├── Navbar.tsx                 # Sticky blur nav, official logo & mobile drawer
 │   │   ├── ScrollProgressBar.tsx      # Standout Feature 4: Top reading progress
 │   │   ├── SportsShowcase.tsx         # 16+ Sports filterable by category
 │   │   ├── StatsRibbon.tsx            # Standout Feature 2: Scroll counter animation
@@ -154,10 +162,21 @@ tulas-international-school/
    npm run build
    ```
 
-5. **Preview production build locally**:
+5. **Run code quality linter (0 errors, 0 warnings)**:
+   ```bash
+   npm run lint
+   ```
+
+6. **Preview production build locally**:
    ```bash
    npm run preview
    ```
+
+7. **Execute automated 5-viewport responsiveness suite**:
+   ```bash
+   node test_viewports.js
+   ```
+   *Verifies Desktop (1440x900), Laptop (1366x768), Tablet (768x1024), Mobile (390x844), and Small Mobile (360x800) with zero horizontal overflow.*
 
 ---
 
