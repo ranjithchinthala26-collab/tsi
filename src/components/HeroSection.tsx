@@ -193,37 +193,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="relative w-full h-full flex flex-col items-center justify-between bg-gradient-to-br from-slate-900 via-[#151f38] to-slate-950 p-6 pt-16"
+                    className="relative w-full h-full"
                   >
-                    {/* Background subtle campus texture */}
                     <img
-                      src="/images/campus.jpg"
-                      alt="Campus Backdrop"
-                      className="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-[1px]"
+                      src="/images/hero.jpg"
+                      alt="Tula's International School students in uniform happily learning together"
+                      className="w-full h-full object-cover object-[58%_25%] group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
-
-                    {/* Central Scholar with 100% UNCLIPPED, RADIANT FACE */}
-                    <div className="relative z-10 flex flex-col items-center justify-center my-auto">
-                      <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-tulas-gold/70 shadow-2xl bg-white/10 backdrop-blur-sm p-1.5 group-hover:scale-105 transition-transform duration-500">
-                        <img
-                          src="/images/student-female.png"
-                          alt="Tula's International School Student"
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none" />
 
                     {/* Bottom Caption */}
-                    <div className="relative z-20 w-full text-center pb-2">
-                      <span className="inline-block px-3 py-0.5 rounded-full bg-tulas-gold text-slate-950 font-extrabold text-[10px] tracking-wider uppercase mb-1 shadow-sm">
-                        The Modern Gurukul • Class of 2027
+                    <div className="absolute bottom-6 left-6 right-6 text-white z-20 pointer-events-none">
+                      <span className="inline-block px-3 py-1 rounded-full bg-tulas-gold text-slate-900 font-extrabold text-[11px] tracking-wider uppercase mb-2 shadow-md">
+                        The Modern Gurukul • Dehradun
                       </span>
-                      <h3 className="font-display font-bold text-base sm:text-lg text-white">
-                        Values, Character & Global Excellence
+                      <h3 className="font-display font-bold text-xl sm:text-2xl leading-tight text-white mb-1 drop-shadow-sm">
+                        Happily Learning & Excelling
                       </h3>
-                      <p className="text-[11px] text-white/70">
-                        Where curiosity transforms into compassionate leadership.
+                      <p className="text-xs text-white/90">
+                        Where academic rigor meets compassionate mentorship in Doon Valley.
                       </p>
                     </div>
                   </motion.div>
