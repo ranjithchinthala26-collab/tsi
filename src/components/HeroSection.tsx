@@ -37,19 +37,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               <span className="hidden sm:inline text-slate-700 dark:text-slate-300 font-semibold normal-case">CBSE Co-Ed Boarding</span>
             </motion.div>
 
-            {/* Main Headline with Original Copy and Animated Underline Doodle */}
+            {/* Main Headline with Reviewed Copy and Animated Underline Doodle */}
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-6"
+              className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl xl:text-7xl tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-4"
             >
-              LET’S DO <span className="text-tulas-crimson italic font-serif">it</span> WITH{' '}
-              <span className="relative whitespace-nowrap inline-block text-tulas-crimson dark:text-tulas-gold">
-                TULAS
+              Where curiosity <br className="hidden sm:inline" />
+              <span className="relative inline-block text-tulas-crimson dark:text-tulas-gold">
+                becomes possibility.
                 {/* Hand-drawn Underline Doodle SVG */}
                 <svg
-                  className="absolute -bottom-3 sm:-bottom-4 left-0 w-full h-4 sm:h-5 text-tulas-gold overflow-visible"
+                  className="absolute -bottom-2 sm:-bottom-3 left-0 w-full h-3 sm:h-4 text-tulas-gold overflow-visible"
                   viewBox="0 0 268 14"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +65,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
                 </svg>
               </span>
             </motion.h1>
+
+            {/* Official TIS Motto Pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 mb-6 shadow-sm"
+            >
+              <span className="text-slate-400 font-medium">School Motto:</span>
+              <span className="text-tulas-crimson font-serif italic text-sm sm:text-base">LET’S DO it</span>
+              <span className="text-tulas-gold font-extrabold">WITH TULAS</span>
+            </motion.div>
 
             {/* Sub-headline: Retaining Authentic TIS Message */}
             <motion.p
@@ -138,7 +150,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               data-cursor-text="CAMPUS"
             >
               <img
-                src="/tis-assets/campus.e67b1a0a.png"
+                src="/images/campus.jpg"
                 alt="Tula's International School Dehradun Campus"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -168,7 +180,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-crimson/10 flex-shrink-0">
                 <img
-                  src="/tis-assets/archery.7a805345.png"
+                  src="/images/sports.jpg"
                   alt="Archery at TIS"
                   className="w-full h-full object-cover"
                 />
@@ -195,15 +207,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               style={{ animation: 'float 7s ease-in-out infinite reverse' }}
               data-cursor-text="CARE"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-tulas-teal-light/30 dark:bg-tulas-teal/20 flex items-center justify-center text-tulas-teal-dark dark:text-tulas-teal flex-shrink-0 font-bold text-base sm:text-lg font-display">
-                6:1
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-teal-light/30 flex-shrink-0 border border-tulas-teal/20">
+                <img
+                  src="/images/student-female.png"
+                  alt="TIS Student"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="pr-2">
                 <p className="text-[11px] font-bold text-tulas-teal-dark dark:text-tulas-teal uppercase tracking-wider">
-                  Mentorship
+                  6:1 Mentorship
                 </p>
                 <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">
-                  Student-Teacher Ratio
+                  Personal Care
                 </p>
                 <p className="text-[10px] text-slate-500 dark:text-slate-400">
                   Every child known & nurtured

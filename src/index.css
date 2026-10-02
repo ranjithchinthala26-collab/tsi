@@ -78,6 +78,13 @@
   }
 }
 
+/* Custom cursor is desktop-only (disabled on phones and tablets) */
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
 /* Scribble SVG path drawing animation */
 .scribble-path {
   stroke-dasharray: 400;

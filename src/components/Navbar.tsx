@@ -102,28 +102,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo & School Title */}
+          {/* Official TIS Brand Logo */}
           <a
             href="#"
-            className="flex items-center gap-3 group"
+            className="flex items-center group py-0.5"
             data-cursor-text="HOME"
+            aria-label="Tula's International School"
           >
-            <div className="relative flex items-center justify-center p-1 rounded-xl bg-white/90 dark:bg-slate-900/90 shadow-sm border border-slate-200/60 dark:border-slate-800">
+            <div className="relative flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white shadow-sm border border-slate-200/80 dark:border-white/20 group-hover:shadow-md transition-all">
               <img
-                src={SCHOOL_INFO.logo}
-                alt="Tula's International School Crest"
-                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                src="/images/tis-logo.png"
+                alt="Tula's International School Logo"
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white leading-none">
-                TULA'S
-              </span>
-              <span className="text-[10px] sm:text-xs font-semibold tracking-widest text-tulas-crimson dark:text-tulas-gold uppercase leading-tight mt-0.5">
-                International School
-              </span>
-              <span className="text-[9px] text-slate-500 dark:text-slate-400 font-medium tracking-normal hidden sm:inline">
-                The Modern Gurukul • Dehradun
-              </span>
             </div>
           </a>
 
