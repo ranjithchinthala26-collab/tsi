@@ -172,12 +172,6 @@ tulas-international-school/
    npm run preview
    ```
 
-7. **Execute automated 5-viewport responsiveness suite**:
-   ```bash
-   node test_viewports.js
-   ```
-   *Verifies Desktop (1440x900), Laptop (1366x768), Tablet (768x1024), Mobile (390x844), and Small Mobile (360x800) with zero horizontal overflow.*
-
 ---
 
 ## 🌐 Deployment Instructions
