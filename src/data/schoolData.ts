@@ -172,6 +172,42 @@ export const SPORTS_DATA: SportItem[] = [
     achievement: "School Snooker Invitational Winner",
     facility: "Full-Size Riley Slate Tables",
   },
+  {
+    id: "cycling",
+    name: "Cycling & Cross-Country",
+    category: "Outdoor",
+    image: "/tis-assets/cycling.80dbb9b1.png",
+    description: "Cross-country and mountain cycling tracks winding through the scenic 22-acre campus foothills.",
+    achievement: "Doon Valley Mountain Trail Champions",
+    facility: "Dedicated Perimeter Trail & Gear Hub",
+  },
+  {
+    id: "hockey",
+    name: "Hockey",
+    category: "Outdoor",
+    image: "/tis-assets/hockey.219fe552.png",
+    description: "National sport excellence with specialized drag-flick coaches, goalie gear, and regulation turf field.",
+    achievement: "Uttarakhand State CBSE Finalists",
+    facility: "Regulation Astro-Style Field",
+  },
+  {
+    id: "table-tennis",
+    name: "Table Tennis",
+    category: "Indoor",
+    image: "/tis-assets/tableTennis.61f6bd56.png",
+    description: "Multi-table indoor arena equipped with Stag ITTF-approved competition tables and robot trainers.",
+    achievement: "District TT Under-16 Champions",
+    facility: "8-Table Air-Conditioned Arena",
+  },
+  {
+    id: "volleyball",
+    name: "Volleyball",
+    category: "Outdoor",
+    image: "/tis-assets/volleyball.045be884.png",
+    description: "Floodlit outdoor and synthetic sand courts fostering teamwork, athletic agility, and aerial power.",
+    achievement: "Inter-School Volleyball Trophy",
+    facility: "Dual Regulation Floodlit Courts",
+  },
 ];
 
 export const CAMPUS_FACILITIES: FacilityItem[] = [

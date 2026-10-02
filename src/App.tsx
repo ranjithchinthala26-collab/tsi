@@ -7,8 +7,7 @@ import { HeroSection } from './components/HeroSection';
 import { StatsRibbon } from './components/StatsRibbon';
 import { WhyTulas } from './components/WhyTulas';
 import { VirtualTourSection } from './components/VirtualTourSection';
-import { SportsShowcase } from './components/SportsShowcase';
-import { LifeAtTIS } from './components/LifeAtTIS';
+import { LifeBeyondClassroom } from './components/LifeBeyondClassroom';
 import { CurriculumGradeExplorer } from './components/CurriculumGradeExplorer';
 import { CelebrityMentors } from './components/CelebrityMentors';
 import { BoardingLife } from './components/BoardingLife';
@@ -65,11 +64,8 @@ export const AppContent: React.FC = () => {
         {/* 7. Interactive 360° Campus Tour & Facilities Explorer */}
         <VirtualTourSection onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* 8. Life at TIS: Sports + Clubs + Arts + Leadership */}
-        <LifeAtTIS onOpenEnquiry={handleOpenEnquiry} />
-
-        {/* 9. 16+ Olympic & Modern Sports Showcase */}
-        <SportsShowcase onOpenEnquiry={handleOpenEnquiry} />
+        {/* 8. Life Beyond the Classroom: Sports (16+ disciplines) + Arts + Clubs + Boarding + Sports Marquee */}
+        <LifeBeyondClassroom onOpenEnquiry={handleOpenEnquiry} />
 
         {/* 9. Tailored Academic Pathways (Class IV-XII) & Gurukul Daily Routine */}
         <CurriculumGradeExplorer onOpenEnquiry={handleOpenEnquiry} />

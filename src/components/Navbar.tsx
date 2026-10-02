@@ -166,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
               whileTap={{ scale: 0.97 }}
               onClick={onOpenEnquiry}
               data-cursor-text="APPLY"
-              className="relative inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm tracking-wide text-white bg-gradient-to-r from-tulas-crimson via-tulas-crimson-dark to-tulas-crimson shadow-glow-crimson hover:shadow-lg transition-all duration-300 group overflow-hidden"
+              className="hidden sm:inline-flex relative items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-bold text-xs sm:text-sm tracking-wide text-white bg-gradient-to-r from-tulas-crimson via-tulas-crimson-dark to-tulas-crimson shadow-glow-crimson hover:shadow-lg transition-all duration-300 group overflow-hidden"
             >
               {/* Shimmer sweep */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all pointer-events-none" />
