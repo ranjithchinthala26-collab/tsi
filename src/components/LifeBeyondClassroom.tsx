@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Trophy,
@@ -27,6 +27,36 @@ export const LifeBeyondClassroom: React.FC<LifeBeyondClassroomProps> = ({ onOpen
   const [activePillar, setActivePillar] = useState<PillarKey>('sports');
   const [selectedSportCategory, setSelectedSportCategory] = useState<string>('All');
   const [selectedSportModal, setSelectedSportModal] = useState<SportItem | null>(null);
+
+  // Auto-switch to sports pillar when #sports is navigated to
+  useEffect(() => {
+    const handleSportsNavigation = () => {
+      setActivePillar('sports');
+      const sportsEl = document.getElementById('sports');
+      if (sportsEl) {
+        sportsEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    const handleHashCheck = () => {
+      if (window.location.hash === '#sports') {
+        setActivePillar('sports');
+        const sportsEl = document.getElementById('sports');
+        if (sportsEl) {
+          sportsEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    handleHashCheck();
+    window.addEventListener('hashchange', handleHashCheck);
+    window.addEventListener('tis-navigate-sports', handleSportsNavigation);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashCheck);
+      window.removeEventListener('tis-navigate-sports', handleSportsNavigation);
+    };
+  }, []);
 
   // The 16 TIS sports for the marquee
   const marqueeSports = [
@@ -170,6 +200,9 @@ export const LifeBeyondClassroom: React.FC<LifeBeyondClassroomProps> = ({ onOpen
             Education at TIS extends far past conventional classrooms. Nestled in the Shivalik foothills of Dehradun, our 22-acre modern Gurukul empowers every student to discover their passions across Olympic sports, fine arts, innovation clubs, and nurturing residential boarding.
           </motion.p>
         </div>
+
+        {/* Sports Anchor Target for Navbar, Quick Links & Direct Sharing */}
+        <div id="sports" className="scroll-mt-28 -mt-4 mb-4" />
 
         {/* 1. Animated Horizontal Continuous Sports Marquee */}
         <div className="mb-14 overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-800 dark:border-slate-700/60 shadow-xl py-3.5 relative">

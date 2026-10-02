@@ -171,11 +171,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
             </motion.div>
 
             {/* Floating Orbit Card 1: Olympic Sports (Archery) */}
-            <motion.div
+            <motion.a
+              href="#sports"
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new CustomEvent('tis-navigate-sports'));
+                const sportsEl = document.getElementById('sports');
+                if (sportsEl) {
+                  sportsEl.scrollIntoView({ behavior: 'smooth' });
+                }
+                window.history.pushState(null, '', '#sports');
+              }}
               initial={{ opacity: 0, x: -30, y: -20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute -top-4 left-2 sm:-top-6 sm:-left-6 md:-left-8 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-20 animate-float-slow"
+              className="absolute -top-4 left-2 sm:-top-6 sm:-left-6 md:-left-8 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-20 animate-float-slow cursor-pointer hover:scale-105 transition-transform"
               data-cursor-text="SPORTS"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-crimson/10 flex-shrink-0">
@@ -196,7 +206,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
                   World-class sporting facilities
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* Floating Orbit Card 2: 6:1 Ratio & Care */}
             <motion.div

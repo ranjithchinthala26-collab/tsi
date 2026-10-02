@@ -18,7 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
       setIsScrolled(window.scrollY > 40);
 
       // Section tracker for active nav state
-      const sections = ['about', 'academics', 'life-at-tis', 'sports', 'campus', 'boarding', 'mentors', 'reviews', 'faqs'];
+      const sections = ['about', 'campus', 'life-at-tis', 'sports', 'academics', 'mentors', 'boarding', 'reviews', 'faqs'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -38,12 +38,37 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      const targetId = href.substring(1);
+      e.preventDefault();
+
+      if (targetId === 'sports') {
+        window.dispatchEvent(new CustomEvent('tis-navigate-sports'));
+        const sportsEl = document.getElementById('sports');
+        if (sportsEl) {
+          sportsEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        window.history.pushState(null, '', href);
+        setActiveSection('sports');
+        return;
+      }
+
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+        setActiveSection(targetId);
+      }
+    }
+  };
+
   const navLinks = [
     { label: 'About TIS', href: '#about', id: 'about' },
-    { label: 'Academics', href: '#academics', id: 'academics' },
+    { label: '360° Campus', href: '#campus', id: 'campus' },
     { label: 'Life at TIS', href: '#life-at-tis', id: 'life-at-tis' },
     { label: '16+ Sports', href: '#sports', id: 'sports' },
-    { label: '360° Campus', href: '#campus', id: 'campus' },
+    { label: 'Academics', href: '#academics', id: 'academics' },
     { label: 'Boarding', href: '#boarding', id: 'boarding' },
     { label: 'Mentors', href: '#mentors', id: 'mentors' },
     { label: 'Reviews', href: '#reviews', id: 'reviews' },
@@ -79,6 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
 
             <a
               href="#campus"
+              onClick={(e) => handleNavClick(e, '#campus')}
               className="hidden lg:flex items-center gap-1 text-white/90 hover:text-white underline underline-offset-2 transition-colors"
             >
               Virtual Tour
@@ -126,6 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
                 <a
                   key={link.id}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   data-cursor-text={link.label.toUpperCase()}
                   className={`relative px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
                     isActive
@@ -192,7 +219,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
                 <a
                   key={link.id}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                    handleNavClick(e, link.href);
+                  }}
                   className="flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors"
                 >
                   <span>{link.label}</span>

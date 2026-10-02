@@ -9,6 +9,29 @@ export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleFooterLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      const targetId = href.substring(1);
+      e.preventDefault();
+
+      if (targetId === 'sports') {
+        window.dispatchEvent(new CustomEvent('tis-navigate-sports'));
+        const sportsEl = document.getElementById('sports');
+        if (sportsEl) {
+          sportsEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        window.history.pushState(null, '', href);
+        return;
+      }
+
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', href);
+      }
+    }
+  };
+
   const navColumns = [
     {
       title: "Explore TIS",
@@ -126,6 +149,7 @@ export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry 
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
+                      onClick={(e) => handleFooterLinkClick(e, link.href)}
                       className="hover:text-tulas-gold transition-colors inline-flex items-center gap-1"
                     >
                       <span>{link.label}</span>
