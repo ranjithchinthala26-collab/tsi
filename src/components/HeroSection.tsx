@@ -102,7 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
                 data-cursor-text="APPLY"
                 className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm sm:text-base text-white bg-gradient-to-r from-tulas-crimson via-tulas-crimson-dark to-tulas-crimson shadow-glow-crimson hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 group"
               >
-                <span>Apply for Admissions 2025-26</span>
+                <span>Apply for Admissions 2027</span>
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
@@ -133,7 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                <span>24/7 Gated & Infirmary Care</span>
+                <span>24×7 Medical Assistance</span>
               </div>
             </motion.div>
           </div>
@@ -162,7 +162,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
                   Dehradun, Uttarakhand
                 </span>
                 <h3 className="font-display font-bold text-xl sm:text-2xl leading-tight text-white mb-1">
-                  22-Acre Serene Foothill Campus
+                  22-Acre Pollution-Free Campus
                 </h3>
                 <p className="text-xs text-white/80">
                   Where academic rigour meets the tranquility of nature.
@@ -193,7 +193,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
                   16+ Sports Disciplines
                 </p>
                 <p className="text-[10px] text-slate-500 dark:text-slate-400">
-                  World Champion Coaches
+                  World-class sporting facilities
                 </p>
               </div>
             </motion.div>
@@ -216,7 +216,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               </div>
               <div className="pr-2">
                 <p className="text-[11px] font-bold text-tulas-teal-dark dark:text-tulas-teal uppercase tracking-wider">
-                  6:1 Mentorship
+                  6:1 Student-Teacher Ratio
                 </p>
                 <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">
                   Personal Care
@@ -227,7 +227,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               </div>
             </motion.div>
 
-            {/* Floating Badge 3: 24x7 Medical Infirmary */}
+            {/* Floating Badge 3: 24x7 Medical Assistance */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -236,7 +236,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
             >
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
               <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
-                24/7 Multi-Specialty Hospital Care
+                24×7 Medical Assistance
               </span>
             </motion.div>
           </div>

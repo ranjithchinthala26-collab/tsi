@@ -143,7 +143,7 @@ export const EnquirySection: React.FC = () => {
           <div className="lg:col-span-7 p-6 sm:p-10 bg-white/95 dark:bg-slate-900/95 flex flex-col justify-center">
             <div className="mb-6">
               <span className="inline-block px-3 py-1 rounded-full bg-tulas-crimson/10 text-tulas-crimson dark:text-tulas-gold text-xs font-bold uppercase tracking-wider mb-2">
-                Fast-Track Admissions 2025-26
+                Fast-Track Admissions 2027
               </span>
               <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-white">
                 Enquire Now!

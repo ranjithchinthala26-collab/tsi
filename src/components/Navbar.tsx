@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 text-[11px] font-semibold tracking-wider uppercase backdrop-blur-sm">
               <Sparkles className="w-3 h-3 text-tulas-gold-light animate-pulse" />
-              Admissions Open 2025-26
+              Admissions Open 2027 — Class IV–XII
             </span>
             <span className="hidden md:inline text-white/90">
               CBSE Co-Ed Boarding School (Class IV to XII) | Dehradun
@@ -161,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
             >
               {/* Shimmer sweep */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all pointer-events-none" />
-              <span>Apply for 2025-26</span>
+              <span>Apply for 2027</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </motion.button>
 
@@ -216,7 +216,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
                   }}
                   className="w-full py-3 rounded-xl bg-tulas-crimson text-white font-bold text-sm text-center shadow-lg shadow-tulas-crimson/30"
                 >
-                  Apply Now • Admissions 2025-26
+                  Apply Now • Admissions 2027
                 </button>
               </div>
             </div>

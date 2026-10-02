@@ -12,7 +12,7 @@ export const SCHOOL_INFO = {
   ratio: "6:1 Student-Teacher Ratio",
   campusSize: "22-Acre Pollution-Free Campus",
   sportsCount: "16+ Olympic & Modern Sports",
-  medicalCare: "24/7 Multi-Specialty Infirmary with Resident Doctors",
+  medicalCare: "24×7 Medical Assistance with Resident Doctors",
   address: "Dhoolkot, P.O – Selaqui, Chakrata Road, Dehradun-248011, Uttarakhand, India",
   phone: "+91-9837983791",
   landline: "0135-2699444 / 0135-2699666",
@@ -28,7 +28,7 @@ export const KEY_STATS = [
     id: "campus",
     value: 22,
     suffix: " Acres",
-    label: "Pollution-Free Green Campus",
+    label: "22-Acre Pollution-Free Campus",
     description: "Nestled in the tranquil Shivalik foothills of Dehradun, surrounded by pristine nature.",
   },
   {
@@ -50,7 +50,7 @@ export const KEY_STATS = [
     id: "medical",
     value: 24,
     suffix: "x7",
-    label: "Medical Care & Infirmary",
+    label: "24×7 Medical Assistance",
     description: "Resident medical officers, ICU-equipped ambulance, and round-the-clock nursing.",
   },
   {
@@ -69,7 +69,7 @@ export const SPORTS_DATA: SportItem[] = [
     name: "Archery",
     category: "Olympic",
     image: "/images/sports.jpg",
-    description: "State-of-the-art international target range mentored by World Champion & Arjuna Awardee coaches.",
+    description: "State-of-the-art international target range with world-class sporting facilities and certified coaches.",
     achievement: "National Gold Medals in 2023 & 2024",
     facility: "50m International Specification Outdoor Range",
   },
@@ -213,7 +213,7 @@ export const SPORTS_DATA: SportItem[] = [
 export const CAMPUS_FACILITIES: FacilityItem[] = [
   {
     id: "campus-green",
-    title: "22-Acre Nature Sanctuary",
+    title: "22-Acre Pollution-Free Campus",
     subtitle: "Clean Mountain Air & Zero Pollution",
     description: "Set against the backdrop of the Doon Valley, our campus provides an unpolluted sanctuary where students breathe clean air and discover holistic well-being away from urban chaos.",
     image: "/images/campus.jpg",
@@ -227,7 +227,7 @@ export const CAMPUS_FACILITIES: FacilityItem[] = [
     description: "Blending timeless Gurukul principles—respect, mindfulness, resilience, and mentor-disciple bonding—with ultra-modern STEM labs, robotics, and global curricula.",
     image: "/images/student-gurukul.png",
     tags: ["Mentorship", "Mindfulness", "STEM & AI", "Value Education"],
-    stats: "6:1 Student-Teacher Mentorship",
+    stats: "6:1 Student-Teacher Ratio",
   },
   {
     id: "residential-life",
@@ -249,7 +249,7 @@ export const CAMPUS_FACILITIES: FacilityItem[] = [
   },
   {
     id: "infirmary-health",
-    title: "24/7 Multi-Specialty Health Care",
+    title: "24×7 Medical Assistance",
     subtitle: "Round-the-Clock Peace of Mind",
     description: "On-campus 10-bed infirmary equipped with medical monitoring, resident doctors, qualified nursing staff, and tie-ups with leading super-specialty hospitals in Dehradun.",
     image: "/images/about.jpg",
@@ -264,7 +264,7 @@ export const LIFE_AT_TIS_DATA: LifeActivityItem[] = [
     id: 'sports-archery',
     category: 'Sports',
     title: 'Archery & Precision Shooting',
-    subtitle: 'Mentored by Olympic & World Champions',
+    subtitle: 'World-Class Sporting Facilities & Certified Mentors',
     description: 'Students train at our 50m outdoor range and 10m electronic indoor air-weapon arena, learning razor-sharp composure under pressure.',
     image: '/images/sports.jpg',
     highlight: 'Official Partner of National Archery Championships',

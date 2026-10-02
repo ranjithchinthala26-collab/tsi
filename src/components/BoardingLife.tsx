@@ -18,7 +18,7 @@ export const BoardingLife: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEn
     },
     {
       icon: <HeartPulse className="w-6 h-6 text-rose-500" />,
-      title: "24/7 Multi-Specialty Infirmary",
+      title: "24×7 Medical Assistance",
       desc: "Resident medical officers, ICU-equipped ambulance, routine health and dental screenings, and tie-ups with Dehradun super-specialty hospitals.",
       tag: "Medical Safety",
     },

@@ -79,7 +79,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
 
     // Simulate server submission
     setTimeout(() => {
-      const generatedRef = `TIS-2025-${Math.floor(100000 + Math.random() * 900000)}`;
+      const generatedRef = `TIS-2027-${Math.floor(100000 + Math.random() * 900000)}`;
       setReferenceId(generatedRef);
       setIsSubmitting(false);
       setIsSubmitted(true);

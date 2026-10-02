@@ -30,7 +30,7 @@ export const WhyTulas: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquir
       border: 'hover:border-tulas-gold',
       points: [
         '16+ Olympic and modern sports disciplines on campus',
-        'Mentored by World Champion & Arjuna Awardee coaches',
+        'World-class sporting facilities with certified trainers',
         'Equestrian arena, 10m electronic shooting range, half-Olympic pool',
         'Daily morning yoga, surya namaskar, and aerobic conditioning',
       ],

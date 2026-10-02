@@ -23,7 +23,7 @@ export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry 
     {
       title: "Admissions",
       links: [
-        { label: "Admission Criteria 2025-26", href: "#contact" },
+        { label: "Admission Criteria 2027", href: "#contact" },
         { label: "Junior School (Class IV-V)", href: "#academics" },
         { label: "Middle School (Class VI-VIII)", href: "#academics" },
         { label: "Secondary (Class IX-X)", href: "#academics" },
@@ -80,7 +80,7 @@ export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry 
               className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-tulas-crimson via-tulas-crimson-dark to-tulas-crimson hover:scale-105 transition-all text-white font-bold text-sm tracking-wide shadow-glow-crimson flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-tulas-gold-light" />
-              <span>Admissions Open 2025-26</span>
+              <span>Admissions Open 2027</span>
             </button>
           </div>
         </div>

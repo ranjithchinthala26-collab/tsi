@@ -35,7 +35,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose }) =
               <div>
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-tulas-gold-light mb-1">
                   <Sparkles className="w-3.5 h-3.5" />
-                  Admissions Open 2025-26
+                  Admissions Open 2027
                 </span>
                 <h3 className="font-display font-extrabold text-xl sm:text-2xl text-white">
                   TIS Admission Enquiry
