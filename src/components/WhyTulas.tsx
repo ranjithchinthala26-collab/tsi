@@ -136,29 +136,28 @@ export const WhyTulas: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquir
             Established in 2012 by <strong>Rishabh Educational Trust</strong>, TIS was envisioned to bridge ancient wisdom with modern global excellence. We believe in providing <em>seamless opportunities</em> for every child to excel in mind, body, and character.
           </motion.p>
 
-          {/* About TIS Visual Showcase Banner */}
+          {/* About TIS Visual Showcase Banner (Framed with object-top so faces are fully visible) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.25 }}
-            className="mt-8 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800/80 group aspect-[16/7] max-h-72 w-full"
-            data-cursor-text="ABOUT"
+            className="mt-8 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800/80 group aspect-[16/9] sm:aspect-[21/10] max-h-[440px] w-full"
+            data-cursor-text="AWARDS"
           >
             <img
               src="/images/about.jpg"
-              alt="Tula's International School Academic Campus and Architecture"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Tula's International School Ranked #1 Residential School Award"
+              className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-102"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-5 sm:p-7 text-left">
-              <div>
-                <span className="px-3 py-1 rounded-full bg-tulas-gold text-slate-900 font-extrabold text-[10px] sm:text-xs tracking-wider uppercase mb-1.5 inline-block">
-                  The Modern Gurukul • Dehradun
-                </span>
-                <h3 className="font-display font-bold text-lg sm:text-2xl text-white">
-                  Ranked #1 Residential School in Uttarakhand
-                </h3>
-              </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 flex flex-col sm:flex-row items-start sm:items-center gap-2.5">
+              <span className="px-3.5 py-1.5 rounded-full bg-tulas-gold text-slate-950 font-extrabold text-xs tracking-wider uppercase shadow-md">
+                The Modern Gurukul • Dehradun
+              </span>
+              <span className="px-3.5 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 text-white font-bold text-xs tracking-wide">
+                Ranked #1 Boarding School in Uttarakhand • Golden Star Award
+              </span>
             </div>
           </motion.div>
 

@@ -252,7 +252,7 @@ export const CAMPUS_FACILITIES: FacilityItem[] = [
     title: "24×7 Medical Assistance",
     subtitle: "Round-the-Clock Peace of Mind",
     description: "On-campus 10-bed infirmary equipped with medical monitoring, resident doctors, qualified nursing staff, and tie-ups with leading super-specialty hospitals in Dehradun.",
-    image: "/images/about.jpg",
+    image: "/tis-assets/image3.b8273b93.png",
     tags: ["Resident Doctor", "ICU Ambulance", "Dental & Eye Checkups", "Emergency Care"],
     stats: "24-Hour Active Medical Vigilance",
   },

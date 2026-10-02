@@ -133,21 +133,51 @@ export const CurriculumGradeExplorer: React.FC<{ onOpenEnquiry: () => void }> = 
                   </div>
                 </div>
 
-                {/* Academic Laboratory & Learning Space Banner */}
-                <div className="mb-8 rounded-2xl overflow-hidden aspect-[21/9] max-h-56 w-full relative shadow-md group border border-slate-200/80 dark:border-slate-700/80" data-cursor-text="LABS">
-                  <img
-                    src="/images/academics.jpg"
-                    alt="Tula's International School Academic Laboratory & Smart Classrooms"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent flex items-end p-4 sm:p-6">
-                    <div className="text-white">
-                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-tulas-gold block mb-1">
-                        State-of-the-Art STEM Laboratories & Digital Infrastructure
+                {/* Academic Laboratory & Learning Space Showcase (Uncropped, Full Face & Hands-on Science) */}
+                <div
+                  className="mb-8 rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 border border-slate-700/80 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-center p-6 sm:p-8 relative group"
+                  data-cursor-text="LABS"
+                >
+                  {/* Left: STEM Curriculum Detail */}
+                  <div className="lg:col-span-7 space-y-3.5 text-white">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tulas-gold/20 border border-tulas-gold/40 text-tulas-gold text-xs font-bold tracking-wider uppercase">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>State-of-the-Art STEM Laboratories</span>
+                    </div>
+
+                    <h3 className="font-display font-bold text-xl sm:text-2xl text-white leading-tight">
+                      Physics, Chemistry, Biology & AI Robotics Centers
+                    </h3>
+
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                      Hands-on scientific discovery where textbook theory transforms into empirical understanding. Students work with university-grade optical benches, digital microscopes, 3D prototyping, and dedicated research workstations.
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-white text-[11px] font-semibold">
+                        🔬 Optical Physics & Laser Bench
                       </span>
-                      <p className="text-xs sm:text-sm font-semibold text-white/90">
-                        Physics, Chemistry, Biology & AI Robotics Centers fostering hands-on discovery.
-                      </p>
+                      <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-white text-[11px] font-semibold">
+                        🧪 1:1 Individual Lab Apparatus
+                      </span>
+                      <span className="px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-white text-[11px] font-semibold">
+                        🤖 AI & Robotics Prototyping
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Right: The Student in Laboratory with Full Face & Equipment */}
+                  <div className="lg:col-span-5 flex justify-center items-center">
+                    <div className="relative w-full max-w-[320px] aspect-square rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-slate-950/50 p-2">
+                      <img
+                        src="/images/academics.jpg"
+                        alt="Tula's International School Academic Laboratory & Smart Classrooms"
+                        className="w-full h-full object-contain sm:object-cover object-[center_top] rounded-xl transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute bottom-3 left-3 right-3 bg-slate-950/85 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-center">
+                        <p className="text-white text-xs font-bold">Experiential Optics & STEM Lab</p>
+                        <p className="text-tulas-gold text-[10px] font-semibold">Guided by Senior Research Faculty</p>
+                      </div>
                     </div>
                   </div>
                 </div>

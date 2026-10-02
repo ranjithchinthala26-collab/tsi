@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowRight, ShieldCheck, Trophy, Users, Play } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -8,6 +8,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenVirtualTour }) => {
+  const [heroVisualTab, setHeroVisualTab] = useState<'scholars' | 'campus' | 'sports'>('scholars');
   return (
     <section className="relative min-h-[92vh] pt-32 pb-20 md:pt-40 md:pb-28 flex items-center justify-center overflow-hidden">
       {/* Background Decorative Ambient Glows */}
@@ -146,28 +147,146 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800/80 group"
-              data-cursor-text="CAMPUS"
+              className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 dark:border-slate-800/80 group bg-slate-950"
+              data-cursor-text={heroVisualTab.toUpperCase()}
             >
-              <img
-                src="/images/hero.jpg"
-                alt="Tula's International School Dehradun Campus & Students"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Bottom Caption Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <span className="inline-block px-3 py-1 rounded-full bg-tulas-gold text-slate-900 font-extrabold text-[11px] tracking-wider uppercase mb-2">
-                  Dehradun, Uttarakhand
-                </span>
-                <h3 className="font-display font-bold text-xl sm:text-2xl leading-tight text-white mb-1">
-                  22-Acre Pollution-Free Campus
-                </h3>
-                <p className="text-xs text-white/80">
-                  Where academic rigour meets the tranquility of nature.
-                </p>
+              {/* Interactive Showcase Tabs at Top */}
+              <div className="absolute top-3.5 left-3 right-3 sm:left-4 sm:right-4 z-30 flex items-center justify-center gap-1 sm:gap-1.5 p-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 shadow-lg">
+                <button
+                  onClick={() => setHeroVisualTab('scholars')}
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${
+                    heroVisualTab === 'scholars'
+                      ? 'bg-tulas-crimson text-white shadow-sm'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  👨‍🎓 Scholars
+                </button>
+                <button
+                  onClick={() => setHeroVisualTab('campus')}
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${
+                    heroVisualTab === 'campus'
+                      ? 'bg-tulas-crimson text-white shadow-sm'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  🏫 22-Acre Campus
+                </button>
+                <button
+                  onClick={() => setHeroVisualTab('sports')}
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${
+                    heroVisualTab === 'sports'
+                      ? 'bg-tulas-crimson text-white shadow-sm'
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                >
+                  ⚽ Athletics
+                </button>
               </div>
+
+              {/* Dynamic Display based on active tab */}
+              <AnimatePresence mode="wait">
+                {heroVisualTab === 'scholars' && (
+                  <motion.div
+                    key="tab-scholars"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative w-full h-full flex flex-col items-center justify-between bg-gradient-to-br from-slate-900 via-[#151f38] to-slate-950 p-6 pt-16"
+                  >
+                    {/* Background subtle campus texture */}
+                    <img
+                      src="/images/campus.jpg"
+                      alt="Campus Backdrop"
+                      className="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-[1px]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
+
+                    {/* Central Scholar with 100% UNCLIPPED, RADIANT FACE */}
+                    <div className="relative z-10 flex flex-col items-center justify-center my-auto">
+                      <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-tulas-gold/70 shadow-2xl bg-white/10 backdrop-blur-sm p-1.5 group-hover:scale-105 transition-transform duration-500">
+                        <img
+                          src="/images/student-female.png"
+                          alt="Tula's International School Student"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Bottom Caption */}
+                    <div className="relative z-20 w-full text-center pb-2">
+                      <span className="inline-block px-3 py-0.5 rounded-full bg-tulas-gold text-slate-950 font-extrabold text-[10px] tracking-wider uppercase mb-1 shadow-sm">
+                        The Modern Gurukul • Class of 2027
+                      </span>
+                      <h3 className="font-display font-bold text-base sm:text-lg text-white">
+                        Values, Character & Global Excellence
+                      </h3>
+                      <p className="text-[11px] text-white/70">
+                        Where curiosity transforms into compassionate leadership.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {heroVisualTab === 'campus' && (
+                  <motion.div
+                    key="tab-campus"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative w-full h-full"
+                  >
+                    <img
+                      src="/images/campus.jpg"
+                      alt="Tula's International School 22-Acre Campus"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 text-white z-20">
+                      <span className="inline-block px-3 py-1 rounded-full bg-tulas-gold text-slate-900 font-extrabold text-[11px] tracking-wider uppercase mb-2">
+                        Dehradun, Uttarakhand
+                      </span>
+                      <h3 className="font-display font-bold text-xl sm:text-2xl leading-tight text-white mb-1">
+                        22-Acre Pollution-Free Campus
+                      </h3>
+                      <p className="text-xs text-white/80">
+                        Where academic rigour meets the tranquility of nature.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
+                {heroVisualTab === 'sports' && (
+                  <motion.div
+                    key="tab-sports"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="relative w-full h-full"
+                  >
+                    <img
+                      src="/images/students.jpg"
+                      alt="Tula's International School Sports Champions"
+                      className="w-full h-full object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 text-white z-20">
+                      <span className="inline-block px-3 py-1 rounded-full bg-tulas-crimson text-white font-extrabold text-[11px] tracking-wider uppercase mb-2">
+                        16+ Sports Disciplines
+                      </span>
+                      <h3 className="font-display font-bold text-xl sm:text-2xl leading-tight text-white mb-1">
+                        Athletic Grit & Team Spirit
+                      </h3>
+                      <p className="text-xs text-white/80">
+                        Olympic archery, football, cricket, and equestrian training.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             {/* Floating Orbit Card 1: Olympic Sports (Archery) */}
@@ -185,7 +304,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               initial={{ opacity: 0, x: -30, y: -20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute -top-4 left-2 sm:-top-6 sm:-left-6 md:-left-8 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-20 animate-float-slow cursor-pointer hover:scale-105 transition-transform"
+              className="absolute -top-4 left-2 sm:-top-6 sm:-left-6 md:-left-8 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-30 animate-float-slow cursor-pointer hover:scale-105 transition-transform"
               data-cursor-text="SPORTS"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-crimson/10 flex-shrink-0">
@@ -208,20 +327,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenEnquiry, onOpenV
               </div>
             </motion.a>
 
-            {/* Floating Orbit Card 2: 6:1 Ratio & Care */}
+            {/* Floating Orbit Card 2: 6:1 Ratio & Care with Student Avatar */}
             <motion.div
               initial={{ opacity: 0, x: 30, y: 20 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-4 md:-right-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-20"
+              className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-4 md:-right-6 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-200/80 dark:border-slate-800 flex items-center gap-3 z-30"
               style={{ animation: 'float 7s ease-in-out infinite reverse' }}
               data-cursor-text="CARE"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-teal-light/30 flex-shrink-0 border border-tulas-teal/20">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-tulas-teal-light/30 flex-shrink-0 border border-tulas-teal/20 p-0.5">
                 <img
-                  src="/images/student-female.png"
-                  alt="TIS Student"
-                  className="w-full h-full object-cover"
+                  src="/images/student-male.png"
+                  alt="TIS Male Student"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="pr-2">
