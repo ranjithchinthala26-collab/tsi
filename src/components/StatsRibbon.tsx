@@ -42,15 +42,24 @@ const Counter: React.FC<{ target: number; duration?: number; prefix?: string; su
   );
 };
 
-export const StatsRibbon: React.FC = () => {
-  const statIcons = [
-    <TreePine className="w-6 h-6 text-emerald-500" />,
-    <Trophy className="w-6 h-6 text-tulas-gold" />,
-    <Award className="w-6 h-6 text-tulas-teal-dark dark:text-tulas-teal" />,
-    <HeartPulse className="w-6 h-6 text-rose-500" />,
-    <Sparkles className="w-6 h-6 text-amber-500" />,
-  ];
+const renderStatIcon = (id: string) => {
+  switch (id) {
+    case 'campus':
+      return <TreePine className="w-6 h-6 text-emerald-500" />;
+    case 'sports':
+      return <Trophy className="w-6 h-6 text-tulas-gold" />;
+    case 'ratio':
+      return <Sparkles className="w-6 h-6 text-amber-500" />;
+    case 'medical':
+      return <HeartPulse className="w-6 h-6 text-rose-500" />;
+    case 'ranking':
+      return <Award className="w-6 h-6 text-tulas-teal-dark dark:text-tulas-teal" />;
+    default:
+      return <Sparkles className="w-6 h-6 text-amber-500" />;
+  }
+};
 
+export const StatsRibbon: React.FC = () => {
   return (
     <section className="relative -mt-6 sm:-mt-10 mb-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -73,7 +82,7 @@ export const StatsRibbon: React.FC = () => {
               }`}
             >
               <div className="p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-800 shadow-sm mb-2.5 sm:mb-3">
-                {statIcons[idx]}
+                {renderStatIcon(stat.id)}
               </div>
 
               <div className="flex items-baseline justify-center">

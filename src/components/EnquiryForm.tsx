@@ -25,6 +25,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
   const [otpVerified, setOtpVerified] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [referenceId, setReferenceId] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSendOtp = () => {
@@ -78,6 +79,8 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
 
     // Simulate server submission
     setTimeout(() => {
+      const generatedRef = `TIS-2025-${Math.floor(100000 + Math.random() * 900000)}`;
+      setReferenceId(generatedRef);
       setIsSubmitting(false);
       setIsSubmitted(true);
 
@@ -110,7 +113,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({
         <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs text-slate-700 dark:text-slate-300 w-full max-w-sm">
           <span>Application Reference ID: </span>
           <span className="font-mono font-bold text-tulas-crimson dark:text-tulas-gold">
-            TIS-2025-{Math.floor(100000 + Math.random() * 900000)}
+            {referenceId}
           </span>
         </div>
       </div>

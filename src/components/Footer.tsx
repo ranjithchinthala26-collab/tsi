@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowUp, Phone, Mail, MapPin, Sparkles, ExternalLink, Heart } from 'lucide-react';
 import { SCHOOL_INFO } from '../data/schoolData';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -138,7 +140,7 @@ export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry 
         {/* Bottom Strip: Copyright & Back to Top */}
         <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            Copyright © {new Date().getFullYear()} Tula's International School, Dehradun. All Rights Reserved.
+            Copyright © {CURRENT_YEAR} Tula's International School, Dehradun. All Rights Reserved.
           </div>
 
           <div className="flex items-center gap-6">

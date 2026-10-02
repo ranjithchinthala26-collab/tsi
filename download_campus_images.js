@@ -1,6 +1,5 @@
 import https from 'node:https';
 import fs from 'node:fs';
-import path from 'node:path';
 
 const urls = [
   { url: 'https://tis.edu.in/images/tis-campus-og.jpg', dest: 'public/tis-assets/tis-campus-og.jpg' },
