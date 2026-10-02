@@ -24,11 +24,13 @@ export const EnquirySection: React.FC = () => {
           <div className="lg:col-span-5 p-8 sm:p-10 bg-gradient-to-br from-tulas-teal-subtle/30 to-tulas-teal-light/20 dark:from-slate-900 dark:to-slate-800/90 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-slate-800/80">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <img
-                  src={SCHOOL_INFO.logo}
-                  alt="Tula's International School Crest"
-                  className="h-12 w-auto object-contain"
-                />
+                <div className="p-1 sm:p-1.5 rounded-xl bg-white shadow-sm border border-slate-200/80 flex items-center justify-center">
+                  <img
+                    src="/images/tis-logo.png"
+                    alt="Tula's International School Crest"
+                    className="h-10 sm:h-12 w-auto object-contain"
+                  />
+                </div>
                 <div>
                   <h3 className="font-display font-extrabold text-xl text-slate-900 dark:text-white leading-tight">
                     Contact Us.
@@ -36,6 +38,20 @@ export const EnquirySection: React.FC = () => {
                   <p className="text-xs text-tulas-crimson dark:text-tulas-gold font-semibold">
                     Admissions Office • Dehradun
                   </p>
+                </div>
+              </div>
+
+              {/* Admissions Campus Image Card */}
+              <div className="mb-6 rounded-2xl overflow-hidden aspect-[16/9] w-full relative shadow-md group border border-slate-200/80 dark:border-slate-700/80" data-cursor-text="VISIT">
+                <img
+                  src="/images/campus.jpg"
+                  alt="Tula's International School Campus Grounds & Admissions Centre"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                  <span className="text-xs font-semibold text-white/95">
+                    Campus Visits & Counselor Interactions: Mon - Sat
+                  </span>
                 </div>
               </div>
 

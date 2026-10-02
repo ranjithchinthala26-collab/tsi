@@ -95,6 +95,32 @@ export const LifeAtTIS: React.FC<LifeAtTISProps> = ({ onOpenEnquiry }) => {
             School at TIS is not merely a curriculum—it is an exhilarating journey of self-discovery spanning championship sports, high-tech labs, soul-stirring arts, and democratic student governance.
           </motion.p>
 
+          {/* Life at TIS Visual Showcase Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 }}
+            className="mt-8 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800/80 group aspect-[16/7] max-h-72 w-full"
+            data-cursor-text="STUDENTS"
+          >
+            <img
+              src="/images/students.jpg"
+              alt="Tula's International School Students, Activities & Campus Camaraderie"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex items-end p-5 sm:p-7 text-left">
+              <div>
+                <span className="px-3 py-1 rounded-full bg-tulas-crimson text-white font-extrabold text-[10px] sm:text-xs tracking-wider uppercase mb-1.5 inline-block">
+                  Student Life & Activities
+                </span>
+                <h3 className="font-display font-bold text-lg sm:text-2xl text-white">
+                  Lifelong Friendships, Sportsmanship & Balanced Living
+                </h3>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Interactive Category Tabs */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
             {categories.map((cat) => {

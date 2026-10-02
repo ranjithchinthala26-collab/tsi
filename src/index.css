@@ -78,8 +78,8 @@
   }
 }
 
-/* Custom cursor is desktop-only (disabled on phones and tablets) */
-@media (max-width: 768px) {
+/* Custom cursor is desktop-only (disabled on phones and tablets <= 1024px) */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
   .custom-cursor {
     display: none !important;
   }

@@ -136,6 +136,32 @@ export const WhyTulas: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquir
             Established in 2012 by <strong>Rishabh Educational Trust</strong>, TIS was envisioned to bridge ancient wisdom with modern global excellence. We believe in providing <em>seamless opportunities</em> for every child to excel in mind, body, and character.
           </motion.p>
 
+          {/* About TIS Visual Showcase Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25 }}
+            className="mt-8 relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800/80 group aspect-[16/7] max-h-72 w-full"
+            data-cursor-text="ABOUT"
+          >
+            <img
+              src="/images/about.jpg"
+              alt="Tula's International School Academic Campus and Architecture"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex items-end p-5 sm:p-7 text-left">
+              <div>
+                <span className="px-3 py-1 rounded-full bg-tulas-gold text-slate-900 font-extrabold text-[10px] sm:text-xs tracking-wider uppercase mb-1.5 inline-block">
+                  The Modern Gurukul • Dehradun
+                </span>
+                <h3 className="font-display font-bold text-lg sm:text-2xl text-white">
+                  Ranked #1 Residential School in Uttarakhand
+                </h3>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Tab Switcher: Pillars vs Comparison */}
           <div className="mt-8 inline-flex p-1.5 rounded-full bg-slate-200/70 dark:bg-slate-800/70 backdrop-blur-md">
             <button

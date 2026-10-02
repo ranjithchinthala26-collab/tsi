@@ -53,11 +53,13 @@ export const Footer: React.FC<{ onOpenEnquiry: () => void }> = ({ onOpenEnquiry 
         {/* Top Brand Banner */}
         <div className="pb-16 border-b border-slate-800/80 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <img
-              src={SCHOOL_INFO.logo}
-              alt="Tula's International School Crest"
-              className="h-16 w-auto object-contain bg-white/10 p-2 rounded-2xl backdrop-blur-md"
-            />
+            <div className="p-1.5 sm:p-2 rounded-2xl bg-white shadow-sm border border-white/20 flex items-center justify-center flex-shrink-0">
+              <img
+                src="/images/tis-logo.png"
+                alt="Tula's International School Crest"
+                className="h-14 sm:h-16 w-auto object-contain"
+              />
+            </div>
             <div>
               <span className="text-xs uppercase font-extrabold tracking-widest text-tulas-gold">
                 The Modern Gurukul • Established 2012

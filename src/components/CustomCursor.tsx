@@ -15,21 +15,21 @@ export const CustomCursor: React.FC = () => {
   const smoothY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
-    // Check if device is desktop (>768px) and has a fine mouse pointer
+    // Check if device is desktop (>1024px) and has a fine mouse pointer with hover support
     const checkIsDesktop = () => {
-      const isPointerFine = window.matchMedia('(pointer: fine)').matches;
-      const isWideScreen = window.innerWidth > 768;
-      setIsFinePointer(isPointerFine && isWideScreen);
+      const isPointerFine = window.matchMedia('(pointer: fine) and (hover: hover)').matches;
+      const isDesktopWidth = window.innerWidth > 1024;
+      setIsFinePointer(isPointerFine && isDesktopWidth);
     };
 
     checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
 
-    const mediaQuery = window.matchMedia('(pointer: fine)');
+    const mediaQuery = window.matchMedia('(pointer: fine) and (hover: hover)');
     const handlePointerChange = () => checkIsDesktop();
     mediaQuery.addEventListener('change', handlePointerChange);
 
-    if (!mediaQuery.matches || window.innerWidth <= 768) {
+    if (!mediaQuery.matches || window.innerWidth <= 1024) {
       return () => {
         window.removeEventListener('resize', checkIsDesktop);
         mediaQuery.removeEventListener('change', handlePointerChange);

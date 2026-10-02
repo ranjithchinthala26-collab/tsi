@@ -80,16 +80,48 @@ async function runTests() {
 
     // Check key elements existence and visibility
     const checks = await page.evaluate(() => {
+      const cursorEl = document.querySelector('.custom-cursor');
+      const cursorStyle = cursorEl ? window.getComputedStyle(cursorEl) : null;
+      const isCursorHidden = !cursorEl || cursorStyle?.display === 'none';
+
+      const navLogo = document.querySelector('nav img');
+      const footerLogo = document.querySelector('footer img');
+
+      const heroImg = document.querySelector('img[src="/images/hero.jpg"]');
+      const aboutImg = document.querySelector('img[src="/images/about.jpg"]');
+      const academicsImg = document.querySelector('img[src="/images/academics.jpg"]');
+      const campusImg = document.querySelector('img[src="/images/campus.jpg"]');
+      const sportsImg = document.querySelector('img[src="/images/sports.jpg"]');
+      const studentsImg = document.querySelector('img[src="/images/students.jpg"]');
+
       return {
         hasNavbar: !!document.querySelector('nav'),
-        hasHero: !!document.querySelector('section#hero, [class*="Hero"]'),
-        hasStats: !!document.querySelector('[class*="Stats"], [class*="stat"]'),
-        hasCampus: !!document.querySelector('#campus'),
-        hasLifeAtTIS: !!document.querySelector('#life-at-tis'),
-        hasAdmissionsForm: !!document.querySelector('form, #contact'),
         hasFooter: !!document.querySelector('footer'),
+        navLogoSrc: navLogo?.getAttribute('src'),
+        footerLogoSrc: footerLogo?.getAttribute('src'),
+        hasHeroImage: !!heroImg,
+        hasAboutImage: !!aboutImg,
+        hasAcademicsImage: !!academicsImg,
+        hasCampusImage: !!campusImg,
+        hasSportsImage: !!sportsImg,
+        hasStudentsImage: !!studentsImg,
+        isCustomCursorHidden: isCursorHidden,
         hasMarquee: !!document.querySelector('.animate-marquee'),
       };
+    });
+
+    // Test Theme Switcher
+    const themeCheck = await page.evaluate(async () => {
+      const themeBtn = document.querySelector('button[aria-label*="mode"], button[aria-label*="theme"], button[data-cursor-text*="MODE"]');
+      const initialDark = document.documentElement.classList.contains('dark');
+      if (themeBtn) {
+        themeBtn.click();
+        await new Promise((r) => setTimeout(r, 200));
+        const toggledDark = document.documentElement.classList.contains('dark');
+        themeBtn.click(); // restore
+        return { canToggle: initialDark !== toggledDark, initialDark };
+      }
+      return { canToggle: false, initialDark };
     });
 
     // Take top fold screenshot
@@ -110,6 +142,7 @@ async function runTests() {
       dimensions: `${vp.width}x${vp.height}`,
       overflowCheck,
       checks,
+      themeCheck,
       consoleErrors,
     });
 

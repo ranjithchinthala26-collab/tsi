@@ -133,6 +133,25 @@ export const CurriculumGradeExplorer: React.FC<{ onOpenEnquiry: () => void }> = 
                   </div>
                 </div>
 
+                {/* Academic Laboratory & Learning Space Banner */}
+                <div className="mb-8 rounded-2xl overflow-hidden aspect-[21/9] max-h-56 w-full relative shadow-md group border border-slate-200/80 dark:border-slate-700/80" data-cursor-text="LABS">
+                  <img
+                    src="/images/academics.jpg"
+                    alt="Tula's International School Academic Laboratory & Smart Classrooms"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent flex items-end p-4 sm:p-6">
+                    <div className="text-white">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-tulas-gold block mb-1">
+                        State-of-the-Art STEM Laboratories & Digital Infrastructure
+                      </span>
+                      <p className="text-xs sm:text-sm font-semibold text-white/90">
+                        Physics, Chemistry, Biology & AI Robotics Centers fostering hands-on discovery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Column 1: Academic Curriculum */}
                   <div>
